@@ -1,0 +1,36 @@
+- on login page add signin with email and facebook 
+- on login page also add the normal conventional sign in with username and password
+- on the give page, remove the dormant blue button 
+- so on the give page 
+- remove the summary page 
+- remove the alert to suggest what to use
+- then select to communicate directly(recommended) or use a carrier service, 
+	 (personal delivery/ personal receipt(recommended), dropoff/pickup, courier services)
+
+- renname item exchange option heading to, delivery channels
+
+
+
+on the get filter
+
+it should be country, state, cities
+
+in the get 
+add a description
+the category
+the sub category
+brand
+
+
+so on getting, there should be an option if you want to chat with the giver or not, if yes it sends an automated message to the giver where u can  continue the chat on the chat page 
+
+
+waiting list, when you cant find what you want 
+- "CANT FIND WHAT YOU WANT, PLEASE MAKE A REQUEST BELOW "
+
+- when your request is finanly up, user would get an email stating that his request has been found 
+
+see overview before submitting swap
+
+
+RENAME ZERA APP TO ZERA 
