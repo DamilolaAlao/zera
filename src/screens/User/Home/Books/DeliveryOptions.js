@@ -5,12 +5,6 @@ import {RubikText} from '../../../../components/RubikText'
 import {hp,wp} from '../../../../styles/SignUp-styles'
 import ArrowLeft from '../../../../assets/svgs/arrow-left.svg'
 
-const options2=['Self-Contact',
-                'Drop off/Pick up',
-                'Door to door Delivery',
-                'Drop off to door delivery',
-                'Door Dispatch to Pick up'
-            ]
 
 const options = [
                 'Personal Delivery(Recommended)',
@@ -26,7 +20,7 @@ export default class DeliveryOptions extends React.Component{
                     options.map((item,index)=>{
                         return(
                             <TouchableOpacity
-                                onPress={()=>this.props.navigation.navigate('DeliveryLocation')}
+                                onPress={()=>this.props.navigation.navigate('DeliveryLocation', { selectedOption: index})}
                                 style={styles.options}
                                 key={index}
                             >

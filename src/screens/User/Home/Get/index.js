@@ -23,10 +23,19 @@ export default class Get extends Component{
         selectedStateIndex:null,
 
     }
+   showModal = () => this.setState({ showCountryModal: true, });
+   hideModal = () => {
+       this.setState({ showCountryModal: false })
+       this.setState({ showStateModal: false })
+       this.setState({ showCityModal: false })
+   };
+
+
   render() {
 		
     return (
-        <View style={styles.Container}>
+        <View style={styles.Container} onPress={this.hideModal}>
+        <TouchableOpacity onPress={this.hideModal}>
             <RubikText style={styles.get}>Get</RubikText>
             <RubikText style={styles.select}>Select desired item(s)</RubikText>
             {/* start of search box */}
@@ -113,10 +122,23 @@ export default class Get extends Component{
                         {
                            GetData.map((item,index)=>{
                                return(
-                                   <Items
-                                   itemDetails={item}
-                                   key={index}
-                                   />
+                                   <View style={styles.itemContainer} >
+                                        <View style={styles.imageContainer}>
+                                            <Image resizeMode='cover' style={styles.imageContainer} source={item.img}/>
+                                        </View>
+                                        <RubikText style={styles.itemName}>{item.name}</RubikText>
+                                        <View style={styles.giverDetail}>
+                                            <View style={styles.giverImage}>
+                                                <Image style={[styles.giverImage]} resizeMode='cover' source={item.giver_pic}/>
+                                            </View>
+                                            <RubikText style={styles.giverName}>{item.giver_name}</RubikText>
+                                        </View>
+                                        <TouchableOpacity style={styles.moreButon}>
+                                            <RubikText style={styles.moreText}
+                                                onPress={() => this.props.navigation.navigate('GetDetails')}
+                                            >See more</RubikText>
+                                        </TouchableOpacity>
+                                    </View>
                                )
                            })
                         }
@@ -136,10 +158,13 @@ export default class Get extends Component{
                                     <TouchableOpacity 
                                         style={styles.eachCountry} 
                                         key={index} 
-                                        onPress={()=>this.setState({
-                                            selectedCountry:item.name,selectedCountryIndex:index
-                                        })}
-                                    >
+                                        onPress={()=> {
+                                                this.setState({
+                                                    selectedCountry:item.name,selectedCountryIndex:index
+                                                });
+                                                this.setState({ showCountryModal: false })
+                                            }
+                                        }>
                                         {
                                             this.state.selectedCountry!==(item.name)?
                                             <View style={styles.notSelected}/>
@@ -175,10 +200,13 @@ export default class Get extends Component{
                                             <TouchableOpacity 
                                             style={styles.eachCountry} 
                                             key={index} 
-                                            onPress={()=>this.setState({
-                                                selectedState:item.name,selectedStateIndex:index
-                                            })}
-                                        >
+                                            onPress={()=> {
+                                                this.setState({
+                                                    selectedState:item.name,selectedStateIndex:index
+                                                });
+                                                this.setState({ showStateModal: false })
+                                            }
+                                        }>
                                             {
                                                 this.state.selectedState!==(item.name)?
                                                 <View style={styles.notSelected}/>
@@ -214,10 +242,13 @@ export default class Get extends Component{
                                             <TouchableOpacity 
                                             style={styles.eachCountry} 
                                             key={index} 
-                                            onPress={()=>this.setState({
-                                                selectedCity:item.name,
-                                            })}
-                                        >
+                                            onPress={()=> {
+                                                this.setState({
+                                                    selectedCity:item.name,
+                                                });
+                                                this.setState({ showCityModal: false })
+                                            }
+                                        }>
                                             {
                                                 this.state.selectedCity!==(item.name)?
                                                 <View style={styles.notSelected}/>
@@ -238,6 +269,7 @@ export default class Get extends Component{
                 </View>
             }
             {/* end of city Modal */}
+            </TouchableOpacity>
         </View>
 		   
     );
@@ -259,7 +291,9 @@ const Items =(props)=>{
                 <RubikText style={styles.giverName}>{giver_name}</RubikText>
             </View>
             <TouchableOpacity style={styles.moreButon}>
-                <RubikText style={styles.moreText}>See more</RubikText>
+                <RubikText style={styles.moreText}
+                    onPress={() => props.navigation.navigate('GetDetails')}
+                >See more</RubikText>
             </TouchableOpacity>
         </View>
     )

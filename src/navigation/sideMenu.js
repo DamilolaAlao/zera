@@ -37,31 +37,12 @@ export default class SideMenu extends React.Component {
 
           <RobotoText style={styles.name}>Funmi Johnson</RobotoText>
           <RobotoText
-            style={[
-              styles.name,
-              {color: 'lightgrey', fontSize: hp (14), marginVertical: 0},
-            ]}
-          >
-            Bronze — 25pts
-          </RobotoText>
-
-          <RobotoText style={styles.name}>Funmi Johnson</RobotoText>
-          <RobotoText
             style={[styles.name, {color: 'lightgrey', fontSize: hp (14)}]}
           >
             Bronze — 25pts
           </RobotoText>
         </View>
         <View style={styles.bottomView}>
-          <TouchableOpacity style={styles.links}>
-            <NotificationIcon
-              style={styles.linkImage}
-              // resizeMode='contain'
-              // source={require('../assets/images/bell.png')}
-            />
-            <RubikText style={styles.linkText}>Notification</RubikText>
-
-          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate ('Transactions')}
             style={styles.links}

@@ -68,7 +68,7 @@ export default class Action extends React.Component{
 
                     </TouchableOpacity>
                   { Categories.name!=='Support/Sponsor'&&  <TouchableOpacity 
-                        // onPress={()=>this.props.navigation.navigate("Transaction")}
+                        onPress={()=>this.props.navigation.navigate("SwapForm")}
                         activeOpacity={.8}
                         style={styles.actionButton}
                         >
