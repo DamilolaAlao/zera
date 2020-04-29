@@ -87,7 +87,7 @@ export default class SignUp extends React.Component {
           source={require ('../../assets/images/signup.png')}
         />
         <NirmalaText style={styles.signUpText}>Sign up</NirmalaText>
-
+        <ScrollView>
         <View style={styles.optionBox}>
           <TouchableOpacity activeOpacity={0.7} style={styles.fbView}>
             <Image
@@ -115,16 +115,42 @@ export default class SignUp extends React.Component {
           <RubikText style={styles.emailText}>
             or sign up with e-mail:{' '}
           </RubikText>
-          <View style={styles.input}>
-            <TextInput
-              placeholder="Your email..."
-              // placeholderTextColor='black'
-              onChangeText={input => this.setState ({email: input})}
-              placeholderStyle={[
-                styles.emailText,
-                {fontFamily: 'rubik-md', fontSize: hp (10)},
-              ]}
-            />
+          <View style={{}}>
+            <View style={styles.input}>
+              <TextInput
+                placeholder="Your email..."
+                // placeholderTextColor='black'
+                onChangeText={input => this.setState ({email: input})}
+                placeholderStyle={[
+                  styles.emailText,
+                  {fontFamily: 'rubik-md', fontSize: hp (10)},
+                ]}
+              />
+            </View>
+            <Text>{"     "}</Text>
+            <View style={styles.input}>
+              <TextInput
+                placeholder="Password"
+                // placeholderTextColor='black'
+                onChangeText={input => this.setState ({email: input})}
+                placeholderStyle={[
+                  styles.emailText,
+                  {fontFamily: 'rubik-md', fontSize: hp (10)},
+                ]}
+              />
+            </View>
+            <Text>{"     "}</Text>
+            <View style={styles.input}>
+              <TextInput
+                placeholder="Confirm Password"
+                // placeholderTextColor='black'
+                onChangeText={input => this.setState ({email: input})}
+                placeholderStyle={[
+                  styles.emailText,
+                  {fontFamily: 'rubik-md', fontSize: hp (10)},
+                ]}
+              />
+            </View>
           </View>
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate ('MainNavigation')}
@@ -135,6 +161,18 @@ export default class SignUp extends React.Component {
               SIGN UP
             </Text>
           </TouchableOpacity>
+          <View style={{alignSelf: 'center'}}>
+            <RubikText style={{color: '#000', fontSize: hp (16)}}>
+              By signing up you are agreeing to 
+            </RubikText>
+            <RubikText
+                onPress={() => this.props.navigation.navigate ('SignIn')}
+                style={{color: '#57E8FF', alignSelf: 'center'}}
+              >
+                {' '}our terms of service
+              </RubikText>
+          </View>
+
           <View style={{alignSelf: 'center'}}>
             <RubikText style={{color: '#000', fontSize: hp (14)}}>
               Already have an account ?
@@ -147,12 +185,8 @@ export default class SignUp extends React.Component {
             </RubikText>
           </View>
         </View>
-        <RubikText
-          onPress={() => this.props.navigation.navigate ('CorpSignUp')}
-          style={{color: '#FF0066', marginTop: hp (30)}}
-        >
-          SignUp with a corporate Profile
-        </RubikText>
+        </ScrollView>
+        
 
         {this.state.loading &&
           <View

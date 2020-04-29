@@ -23,8 +23,15 @@ import Success from '../screens/User/Home/Books/success'
 import DeliveryOptions from '../screens/User/Home/Books/DeliveryOptions'
 import DeliveryLocation from '../screens/User/Home/Books/DeliveryLocation'
 import GiveItemDetails from '../screens/User/Home/Books/GiveItemDetails'
+import GetDetails from '../screens/User/Home/Get/getDetails'
+import placeRequest from '../screens/User/Home/Get/placeRequest'
+import SwapForm from '../screens/User/Home/Swap/give'
+import GetPool from '../screens/User/Home/Swap/get'
+import WantForm from '../screens/User/Home/Swap/want'
+import SgetDetails from '../screens/User/Home/Swap/getDetails'
 
 import Camera from '../screens/User/Home/Books/Camera'
+import Scamera from '../screens/User/Home/Swap/Camera'
 import Anonymous from '../screens/User/Home/Books/Anonymous'
 
 
@@ -76,6 +83,7 @@ export default AuthNav = createAppContainer(
         GivebookForm: { screen: GivebookForm, navigationOptions: { headerShown: false } },
         GiveFashionform: { screen: GiveFashionform, navigationOptions: { headerShown: false } },
         Camera: { screen: Camera, navigationOptions: { headerShown: false } },
+        Scamera: { screen: Scamera, navigationOptions: { headerShown: false } },
         Anonymous: { screen: Anonymous, navigationOptions: { headerShown: false } },
         Success: { screen: Success, navigationOptions: { headerShown: false } },
         OthersForm: { screen: OthersForm, navigationOptions: { headerShown: false } },
@@ -117,6 +125,12 @@ export default AuthNav = createAppContainer(
         DeliveryOptions:{screen:DeliveryOptions,navigationOptions:{headerShown:false}},
         DeliveryLocation:{screen:DeliveryLocation,navigationOptions:{headerShown:false}},
         GiveItemDetails:{screen:GiveItemDetails,navigationOptions:{headerShown:false}},
+        GetDetails:{screen:GetDetails,navigationOptions:{headerShown:false}},
+        placeRequest:{screen:placeRequest,navigationOptions:{headerShown:false}},
+        SwapForm:{screen:SwapForm,navigationOptions:{headerShown:false}},
+        WantForm:{screen:WantForm,navigationOptions:{headerShown:false}},
+        GetPool:{screen:GetPool,navigationOptions:{headerShown:false}},
+        SgetDetails:{screen:SgetDetails,navigationOptions:{headerShown:false}},
 
 
 

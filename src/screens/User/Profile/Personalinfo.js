@@ -362,12 +362,12 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between',
     },
-Container:{
-  flex:1,
-  paddingTop:hp(12),
-  paddingHorizontal:wp(16),
-  backgroundColor:'white'
-},
+    Container:{
+      flex:1,
+      paddingTop:hp(12),
+      paddingHorizontal:wp(16),
+      backgroundColor:'white'
+    },
 
 
 });

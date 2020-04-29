@@ -8,6 +8,11 @@ import {RubikText} from '../../../components/RubikText'
 import {RobotoText} from '../../../components/RobotoText'
 const ChatList=[
     {
+        name:'Zera',
+        lastseen:'12:43',
+        img:require('../../../assets/images/Users/user1.png'),
+    },
+    {
         name:'Josie Vega',
         lastseen:'12:43',
         img:require('../../../assets/images/Users/user1.png'),
